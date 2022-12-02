@@ -29,20 +29,13 @@ class PdfItemWidget extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: Appheight.h5),
           height: Appheight.h60,
           decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  offset: const Offset(AppSize.ss3, AppSize.ss5),
-                  blurRadius: AppSize.s60,
-                  color: ColorManager.secondary,
-                ),
-                BoxShadow(
-                  offset: const Offset(AppSize.s50, AppSize.s50),
-                  blurRadius: AppSize.s60,
-                  color: ColorManager.grey1,
-                ),
-              ],
+              border: Border.all(
+                width: 1,
+                color: ColorManager.grey2,
+              ),
+            
               borderRadius: BorderRadius.circular(AppSize.s8),
-              color: ColorManager.lightGrey),
+              color: ColorManager.grey1.withOpacity(0.8)),
           child: Padding(
             padding: const EdgeInsets.all(AppPadding.p8),
             child: Row(

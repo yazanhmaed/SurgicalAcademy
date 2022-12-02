@@ -1,17 +1,20 @@
 class AppString {
-  static const noRouteFound = 'No Route Found';
-
   // basic elements
-  static const storie = 'Storie';
-  static const advanceStorie = 'Advance Storie';
-  static const storynory = 'Storynory';
-  static const errorimage = 'assets/images/play_store.png';
-  static const language = 'ar';
+  static const medicalAcademy = 'Medical Academy';
+  static const loginImage = 'assets/images/backgroundLogin.png';
   static const ok = 'OK';
   static const error = 'ERROR';
 
   //AppBar
   static const barTitle = 'Medical Acadmey';
+  static const course = 'Course';
+  static const surgeryBookMcqs = 'Surgery Book Mcqs';
+  static const surgeryMcqsVedio = 'Surgery Mcqs Vedio ';
+  static const surgeryLecture = 'Surgery Lecture';
+  static const questionBank = 'Question Bank';
+  static const pdf = 'Pdf';
+  static const osce = 'Osce';
   //Course screen
   static const courses = 'Courses';
+  static const tokenKey = '';
 }

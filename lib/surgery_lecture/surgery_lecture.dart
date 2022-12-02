@@ -12,8 +12,9 @@ import 'cubit/cubit.dart';
 import 'cubit/states.dart';
 
 class SurgeryLecture extends StatelessWidget {
-  const SurgeryLecture({super.key, });
-
+  const SurgeryLecture({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class SurgeryLecture extends StatelessWidget {
             return Scaffold(
               appBar: AppBar(
                 title: const Text(
-                  AppString.barTitle,
+                  AppString.surgeryLecture,
                 ),
               ),
               body: ConditionalBuilder(
@@ -41,15 +42,16 @@ class SurgeryLecture extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: Appwidth.w20),
                         height: Appheight.h40,
-                        color: ColorManager.secondary,
                         child: Text(
-                          AppString.courses,
+                          AppString.surgeryLecture,
                           style: getBoldStyle(
                               color: ColorManager.primary,
                               fontSize: AppSize.s15),
                           textAlign: TextAlign.start,
                         ),
-                      ),
+                      ),const Divider(
+                      thickness: 4,
+                    ),
                       // Widget view List Item Course
                       Expanded(
                         child: ListView.builder(
@@ -57,7 +59,8 @@ class SurgeryLecture extends StatelessWidget {
                           itemCount: cubit.surgeryLecture.length,
                           itemBuilder: (context, index) {
                             return PdfItemWidget(
-                                pdfModel: cubit.surgeryLecture[index], index: index);
+                                pdfModel: cubit.surgeryLecture[index],
+                                index: index);
                           },
                         ),
                       )

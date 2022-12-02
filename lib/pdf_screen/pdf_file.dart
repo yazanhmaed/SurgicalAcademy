@@ -24,7 +24,7 @@ class PdfFileScreen extends StatelessWidget {
             return Scaffold(
               appBar: AppBar(
                 title: const Text(
-                  AppString.barTitle,
+                  AppString.pdf,
                 ),
               ),
               body: ConditionalBuilder(
@@ -40,13 +40,15 @@ class PdfFileScreen extends StatelessWidget {
                       padding:
                           const EdgeInsets.symmetric(horizontal: Appwidth.w20),
                       height: Appheight.h40,
-                      color: ColorManager.secondary,
+                     
                       child: Text(
-                        AppString.courses,
+                        AppString.pdf,
                         style: getBoldStyle(
                             color: ColorManager.primary, fontSize: AppSize.s15),
                         textAlign: TextAlign.start,
                       ),
+                    ),const Divider(
+                      thickness: 4,
                     ),
                     // Widget view List Course
                     Expanded(

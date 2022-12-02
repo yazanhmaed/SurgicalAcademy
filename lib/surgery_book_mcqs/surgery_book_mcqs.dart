@@ -12,8 +12,9 @@ import 'cubit/cubit.dart';
 import 'cubit/states.dart';
 
 class SurgeryBookMcqs extends StatelessWidget {
-  const SurgeryBookMcqs({super.key, });
-
+  const SurgeryBookMcqs({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class SurgeryBookMcqs extends StatelessWidget {
             return Scaffold(
               appBar: AppBar(
                 title: const Text(
-                  AppString.barTitle,
+                  AppString.surgeryBookMcqs,
                 ),
               ),
               body: ConditionalBuilder(
@@ -41,15 +42,16 @@ class SurgeryBookMcqs extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: Appwidth.w20),
                         height: Appheight.h40,
-                        color: ColorManager.secondary,
                         child: Text(
-                          AppString.courses,
+                          AppString.surgeryBookMcqs,
                           style: getBoldStyle(
                               color: ColorManager.primary,
                               fontSize: AppSize.s15),
                           textAlign: TextAlign.start,
                         ),
-                      ),
+                      ),const Divider(
+                      thickness: 4,
+                    ),
                       // Widget view List Item Course
                       Expanded(
                         child: ListView.builder(
@@ -57,7 +59,8 @@ class SurgeryBookMcqs extends StatelessWidget {
                           itemCount: cubit.surgeryBookMcqs.length,
                           itemBuilder: (context, index) {
                             return PdfItemWidget(
-                                pdfModel: cubit.surgeryBookMcqs[index], index: index);
+                                pdfModel: cubit.surgeryBookMcqs[index],
+                                index: index);
                           },
                         ),
                       )

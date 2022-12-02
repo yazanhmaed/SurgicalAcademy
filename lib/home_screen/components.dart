@@ -1,5 +1,6 @@
 // ignore: unused_local_variable
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../course_screen/course_screen.dart';
 import '../osce/osce.dart';
 import '../pdf_screen/pdf_file.dart';
@@ -9,13 +10,13 @@ import '../surgery_lecture/surgery_lecture.dart';
 import '../surgery_mcqs_vedio/surgery_mcqs_vedio.dart';
 
 List<IconData> icon = [
-  Icons.menu_book_sharp,
-  Icons.video_collection_outlined,
-  Icons.picture_as_pdf,
-  Icons.picture_as_pdf,
-  Icons.picture_as_pdf,
-  Icons.picture_as_pdf,
-  Icons.picture_as_pdf,
+  FontAwesomeIcons.youtube,
+  FontAwesomeIcons.youtube,
+  FontAwesomeIcons.solidFilePdf,
+  FontAwesomeIcons.solidFilePdf,
+  FontAwesomeIcons.solidFilePdf,
+  FontAwesomeIcons.solidFilePdf,
+  FontAwesomeIcons.solidFilePdf,
 ];
 List<String> name = [
   'Courses',

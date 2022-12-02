@@ -26,7 +26,7 @@ class ItemCourse extends StatelessWidget {
             return Scaffold(
               appBar: AppBar(
                 title: const Text(
-                  AppString.barTitle,
+                  AppString.courses,
                 ),
               ),
               body: ConditionalBuilder(
@@ -41,7 +41,6 @@ class ItemCourse extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: Appwidth.w20),
                         height: Appheight.h40,
-                        color: ColorManager.secondary,
                         child: Text(
                           AppString.courses,
                           style: getBoldStyle(
@@ -50,6 +49,9 @@ class ItemCourse extends StatelessWidget {
                           textAlign: TextAlign.start,
                         ),
                       ),
+                      const Divider(
+                      thickness: 4,
+                    ),
                       // Widget view List Item Course
                       Expanded(
                         child: ListView.builder(

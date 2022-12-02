@@ -23,22 +23,13 @@ class PdfWidget extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: Appheight.h5),
           height: Appheight.h60,
           decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  offset: const Offset(AppSize.ss30, AppSize.s80),
-                  blurRadius: AppSize.s60,
-                  color: ColorManager.secondary,
-                  // inset: true,
-                ),
-                BoxShadow(
-                  offset: const Offset(AppSize.s20, AppSize.s20),
-                  blurRadius: AppSize.s60,
-                  color: ColorManager.grey1,
-                  //  inset: true,
-                ),
-              ],
+              border: Border.all(
+                width: 1,
+                color: ColorManager.grey2,
+              ),
+            
               borderRadius: BorderRadius.circular(AppSize.s8),
-              color: ColorManager.lightGrey),
+              color: ColorManager.grey1.withOpacity(0.8)),
           child: Padding(
             padding: const EdgeInsets.all(AppPadding.p8),
             child: Row(

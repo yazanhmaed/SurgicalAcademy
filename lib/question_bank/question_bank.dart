@@ -12,8 +12,9 @@ import 'cubit/cubit.dart';
 import 'cubit/states.dart';
 
 class QuestionBank extends StatelessWidget {
-  const QuestionBank({super.key, });
-
+  const QuestionBank({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class QuestionBank extends StatelessWidget {
             return Scaffold(
               appBar: AppBar(
                 title: const Text(
-                  AppString.barTitle,
+                  AppString.questionBank,
                 ),
               ),
               body: ConditionalBuilder(
@@ -41,15 +42,16 @@ class QuestionBank extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: Appwidth.w20),
                         height: Appheight.h40,
-                        color: ColorManager.secondary,
                         child: Text(
-                          AppString.courses,
+                          AppString.questionBank,
                           style: getBoldStyle(
                               color: ColorManager.primary,
                               fontSize: AppSize.s15),
                           textAlign: TextAlign.start,
                         ),
-                      ),
+                      ),const Divider(
+                      thickness: 4,
+                    ),
                       // Widget view List Item Course
                       Expanded(
                         child: ListView.builder(
@@ -57,7 +59,8 @@ class QuestionBank extends StatelessWidget {
                           itemCount: cubit.questionBank.length,
                           itemBuilder: (context, index) {
                             return PdfItemWidget(
-                                pdfModel: cubit.questionBank[index], index: index);
+                                pdfModel: cubit.questionBank[index],
+                                index: index);
                           },
                         ),
                       )

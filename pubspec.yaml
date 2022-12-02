@@ -45,6 +45,8 @@ dependencies:
   conditional_builder_null_safety: ^0.0.6
   url_launcher: ^6.1.7
   syncfusion_flutter_pdfviewer: ^20.3.58
+  shared_preferences: ^2.0.15
+  font_awesome_flutter: ^10.2.1
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_acadmey_app/home_screen/components.dart';
+import 'package:medical_acadmey_app/login_screen/login_screen.dart';
 import 'package:medical_acadmey_app/resources/color_manager.dart';
 
 import 'package:medical_acadmey_app/resources/components.dart';
@@ -7,21 +8,37 @@ import 'package:medical_acadmey_app/resources/string_manager.dart';
 import 'package:medical_acadmey_app/resources/styles_manager.dart';
 import 'package:medical_acadmey_app/resources/values_manager.dart';
 
-
+import '../resources/cache_helper.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           AppString.barTitle,
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                CacheHelper.removeData(key: AppString.tokenKey).then((value) {
+                  navigateAndFinish(context, const LoginScreen());
+                });
+              },
+              icon: Icon(
+                Icons.login_outlined,
+                color: ColorManager.white,
+                size: 30,
+              )),
+          const SizedBox(
+            width: 10,
+          )
+        ],
       ),
       body: GridView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: screens.length,
         gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
@@ -48,6 +65,9 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  const SizedBox(
+                    height: Appheight.h15,
+                  ),
                   //Icon Card
                   Icon(
                     icon[index],
@@ -62,8 +82,9 @@ class HomeScreen extends StatelessWidget {
                     name[index],
                     overflow: TextOverflow.visible,
                     softWrap: true,
-                    style: getBoldStyle(color: ColorManager.black)
-                        .copyWith(fontSize: AppSize.s20),
+                    style:
+                        getBoldStyle(color: ColorManager.black.withOpacity(0.8))
+                            .copyWith(fontSize: AppSize.s18),
                   ),
                 ],
               ),
