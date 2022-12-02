@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medical_acadmey_app/login_screen/login_screen.dart';
 import 'package:medical_acadmey_app/resources/bloc.dart';
 import 'package:medical_acadmey_app/resources/theme_manager.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       child:  MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: getApplicationTheme(),
-        home: const HomeScreen(),
+        home: const LoginScreen(),
       ),
     );
   }
