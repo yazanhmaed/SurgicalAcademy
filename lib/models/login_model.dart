@@ -3,3 +3,13 @@ class TokenLogin {
 
   TokenLogin({this.uid});
 }
+class EmailLogin {
+  String? uid;
+
+  EmailLogin({this.uid});
+}
+class PassLogin {
+  String? uid;
+
+  PassLogin({this.uid});
+}

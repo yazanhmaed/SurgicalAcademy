@@ -6,8 +6,8 @@ import 'package:medical_acadmey_app/login_screen/login_screen.dart';
 import 'package:medical_acadmey_app/resources/bloc.dart';
 import 'package:medical_acadmey_app/resources/cache_helper.dart';
 import 'package:medical_acadmey_app/resources/components.dart';
-import 'package:medical_acadmey_app/resources/string_manager.dart';
 import 'package:medical_acadmey_app/resources/theme_manager.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'course_screen/cubit/cubit.dart';
 
@@ -17,16 +17,32 @@ void main() async {
   await Firebase.initializeApp();
   await CacheHelper.init();
   Widget widget;
-  token = CacheHelper.getData(key: AppString.tokenKey);
-   if (token != null) {
-      widget = const HomeScreen();
-    } else {
-      widget = const LoginScreen();
-    }
+  var sharedPreferences = await SharedPreferences.getInstance();
+  favoriteList=sharedPreferences.getStringList('l');
+  //passLo = CacheHelper.getData(key: AppString.emailKey);
+  // token = CacheHelper.getData(key: AppString.tokenKey);
+  //email = sharedPreferences.get(AppString.emailKey) as String?;
+  //favoriteList = CacheHelper.getFav();
+  if (favoriteList != null) {
+    email = favoriteList![0];
+    passLo = favoriteList![1];
+  }
+
+  print(email);
+  if (email != null) {
+    //print(passLo);
+    print(favoriteList);
+
+    widget = const HomeScreen();
+  } else {
+    widget = const LoginScreen();
+  }
   // ignore: deprecated_member_use
   BlocOverrides.runZoned(
     () {
-      runApp( MyApp(startWidget: widget,));
+      runApp(MyApp(
+        startWidget: widget,
+      ));
     },
     blocObserver: MyBlocObserver(),
   );
@@ -47,7 +63,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: getApplicationTheme(),
-        home: startWidget,
+        home: LoginScreen(),
       ),
     );
   }

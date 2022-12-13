@@ -8,11 +8,13 @@ class InputText extends StatelessWidget {
     required this.hintText,
     required this.validator,
     required this.icon,
-    required this.controller,
+    required this.controller,  this.obscureText, 
   });
   final String hintText;
   final String validator;
+  final bool? obscureText;
   final IconData icon;
+
   final TextEditingController? controller;
 
   @override
@@ -20,6 +22,8 @@ class InputText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextFormField(
+        obscureText: obscureText??false,
+      
         style: TextStyle(color: ColorManager.black),
         controller: controller,
         validator: (value) {
@@ -35,6 +39,7 @@ class InputText extends StatelessWidget {
             icon,
             color: ColorManager.primary,
           ),
+       
           hintText: hintText,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),

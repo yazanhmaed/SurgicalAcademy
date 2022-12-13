@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:182652528598:android:439ad074e4057fd222e677",
         "android_client_info": {
-          "package_name": "com.example.admin_acadmey"
+          "package_name": "com.academy.medical_acadmey"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "182652528598-u2ov78e4vr75tbev54dpm2j8j8l9htgo.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.admin_acadmey",
+            "package_name": "com.academy.medical_acadmey",
             "certificate_hash": "e9dc2cff28176cdadeb5987b6c1dac09fcda18ee"
           }
         },
@@ -46,7 +46,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:182652528598:android:00a6dc9e264c35e322e677",
         "android_client_info": {
-          "package_name": "com.example.medical_acadmey_app"
+          "package_name": "com.academy.medical_acadmey"
         }
       },
       "oauth_client": [
@@ -54,7 +54,7 @@
           "client_id": "182652528598-fuf2tabfvqep2ld8ekdqn8roj9np811c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.medical_acadmey_app",
+            "package_name": "com.academy.medical_acadmey",
             "certificate_hash": "e9dc2cff28176cdadeb5987b6c1dac09fcda18ee"
           }
         },

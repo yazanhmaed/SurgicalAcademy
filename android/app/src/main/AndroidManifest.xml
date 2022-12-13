@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.medical_acadmey_app">
+    package="com.academy.medical_acadmey">
     <!-- Provide required visibility configuration for API level 30 and above -->
 <queries>
   <!-- If your app checks for SMS support -->
@@ -13,12 +13,12 @@
     <data android:scheme="tel" />
   </intent>
 </queries>
-<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
 
    <application
-        android:label="medical_acadmey_app"
+        android:label="Medical Academy"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -26,6 +26,8 @@ void navigateAndFinish(
     );
 
 String? token = '';
+String? email = '';
+String? passLo = '';
 String? lan = 'ar';
 
-List<String> favoriteList = [];
+List<String>? favoriteList = [];

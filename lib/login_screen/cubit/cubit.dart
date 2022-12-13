@@ -2,9 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medical_acadmey_app/login_screen/cubit/states.dart';
-
-import '../../models/login_model.dart';
-import '../../models/user_model.dart';
+import 'package:medical_acadmey_app/models/user_model.dart';
 
 class UserCubit extends Cubit<UserStates> {
   UserCubit() : super(UserInitialState());
@@ -18,8 +16,11 @@ class UserCubit extends Cubit<UserStates> {
     FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password)
         .then((value) {
-      var tokenLogin = TokenLogin(uid: value.user!.uid);
-      emit(UserSuccessState(tokenLogin));
+      //print(email.toString());
+      //print(password.toString());
+      //var emailLogin = EmailLogin(uid: email.toString());
+     // var passLogin = PassLogin(uid: password.toString());
+      emit(UserSuccessState());
     }).catchError((onError) {
       emit(UserErrorState());
     });

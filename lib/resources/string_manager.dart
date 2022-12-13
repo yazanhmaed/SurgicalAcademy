@@ -1,7 +1,7 @@
 class AppString {
   // basic elements
   static const medicalAcademy = 'Medical Academy';
-  static const loginImage = 'assets/images/backgroundLogin.png';
+  static const loginImage = 'assets/images/background.png';
   static const ok = 'OK';
   static const error = 'ERROR';
 
@@ -17,4 +17,6 @@ class AppString {
   //Course screen
   static const courses = 'Courses';
   static const tokenKey = '';
+  static const emailKey = '';
+  static const passKey = '';
 }

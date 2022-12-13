@@ -7,6 +7,7 @@ import 'package:medical_acadmey_app/resources/components.dart';
 import 'package:medical_acadmey_app/resources/string_manager.dart';
 import 'package:medical_acadmey_app/resources/styles_manager.dart';
 import 'package:medical_acadmey_app/resources/values_manager.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../resources/cache_helper.dart';
 
@@ -22,10 +23,14 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () {
-                CacheHelper.removeData(key: AppString.tokenKey).then((value) {
-                  navigateAndFinish(context, const LoginScreen());
-                });
+              onPressed: () async {
+                CacheHelper.removeData(key: AppString.tokenKey);
+                CacheHelper.removeData(key: AppString.passKey);
+                CacheHelper.removeData(key: AppString.emailKey);
+                CacheHelper.removeData(key: 'fav');
+                var sharedPreferences = await SharedPreferences.getInstance();
+                sharedPreferences.remove('l');
+                navigateAndFinish(context, LoginScreen());
               },
               icon: Icon(
                 Icons.login_outlined,
