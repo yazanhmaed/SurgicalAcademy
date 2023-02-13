@@ -2,6 +2,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medical_acadmey_app/Pdf_screen/cubit/states.dart';
+import 'package:medical_acadmey_app/resources/widgets/fallback.dart';
 
 import '../resources/color_manager.dart';
 import '../resources/string_manager.dart';
@@ -29,7 +30,7 @@ class PdfFileScreen extends StatelessWidget {
               ),
               body: ConditionalBuilder(
                 condition: cubit.pdf.isNotEmpty,
-                fallback: (context) => const Center(child: CircularProgressIndicator(),),
+                fallback: (context) => Fallback(),
                 builder: (context) => Padding(
                 padding: const EdgeInsets.only(top: AppPadding.p10),
                 child: Column(

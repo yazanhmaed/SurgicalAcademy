@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:medical_acadmey_app/pdf_screen/pdf_view.dart';
-import 'package:medical_acadmey_app/resources/components.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../models/Pdf_model.dart';
+import '../../models/add_app_model.dart';
 import '../color_manager.dart';
 import '../styles_manager.dart';
 import '../values_manager.dart';
 
-class PdfItemWidget extends StatelessWidget {
-  final PdfModel pdfModel;
+class AppItemWidget extends StatelessWidget {
+  const AppItemWidget({super.key, required this.appModel, required this.index});
+  final AddAppModel appModel;
   final int index;
 
-  const PdfItemWidget({super.key, required this.pdfModel, required this.index});
-  // ignore: unused_element
   _launchURL() async {
-    const url = 'https://flutter.dev/exapmle.pdf';
     // ignore: deprecated_member_use
-    if (await canLaunch(pdfModel.linkPdf!)) {
+    if (await canLaunch(appModel.link!)) {
       // ignore: deprecated_member_use
-      await launch(pdfModel.linkPdf!);
+      await launch(appModel.link!);
+      print('sucssrs');
     } else {
-      throw 'Could not launch $url';
+      print('error');
+      throw 'Could not launch ${appModel.link!}';
     }
   }
 
@@ -30,16 +28,7 @@ class PdfItemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(AppPadding.p5),
       child: GestureDetector(
-        onTap: () => 
-        //_launchURL()
-
-        navigateTo(
-          context,
-          PdfView(
-            link: pdfModel.linkPdf!,
-            title: pdfModel.title!,
-          ))
-        ,
+        onTap: () => _launchURL(),
         child: Container(
           padding: const EdgeInsets.all(AppPadding.p5),
           margin: const EdgeInsets.symmetric(vertical: Appheight.h5),
@@ -58,7 +47,7 @@ class PdfItemWidget extends StatelessWidget {
               children: [
                 SizedBox(
                   width: Appwidth.w300,
-                  child: Text('#${index + 1}  ${pdfModel.title!}',
+                  child: Text('#${index + 1}  ${appModel.title!}',
                       style: getBoldStyle(
                           color: ColorManager.black, fontSize: AppSize.s15),
                       overflow: TextOverflow.ellipsis),

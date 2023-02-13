@@ -1,4 +1,4 @@
-package com.academy.medical_acadmey
+package com.medical.medical_acadmey
 
 import io.flutter.embedding.android.FlutterActivity
 

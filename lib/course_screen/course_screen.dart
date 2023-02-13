@@ -8,6 +8,7 @@ import 'package:medical_acadmey_app/resources/string_manager.dart';
 import 'package:medical_acadmey_app/resources/styles_manager.dart';
 import 'package:medical_acadmey_app/resources/values_manager.dart';
 import 'package:medical_acadmey_app/resources/widgets/course_widget.dart';
+import 'package:medical_acadmey_app/resources/widgets/fallback.dart';
 
 class CourseScreen extends StatelessWidget {
   const CourseScreen({super.key});
@@ -26,9 +27,7 @@ class CourseScreen extends StatelessWidget {
             ),
             body: ConditionalBuilder(
               condition: cubit.course.isNotEmpty,
-              fallback: (context) => const Center(
-                child: CircularProgressIndicator(),
-              ),
+              fallback: (context) => const Fallback(),
               builder: (context) => Padding(
                 padding: const EdgeInsets.only(top: AppPadding.p10),
                 child: Column(

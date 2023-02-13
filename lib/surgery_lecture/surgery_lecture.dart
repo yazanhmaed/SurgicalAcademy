@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medical_acadmey_app/resources/color_manager.dart';
 import 'package:medical_acadmey_app/resources/string_manager.dart';
 import 'package:medical_acadmey_app/resources/values_manager.dart';
+import 'package:medical_acadmey_app/resources/widgets/fallback.dart';
 import 'package:medical_acadmey_app/resources/widgets/pdf_item_widget.dart';
 
 import '../resources/styles_manager.dart';
@@ -67,9 +68,7 @@ class SurgeryLecture extends StatelessWidget {
                     ],
                   ),
                 ),
-                fallback: (context) => const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                fallback: (context) =>Fallback(),
               ),
             );
           }),

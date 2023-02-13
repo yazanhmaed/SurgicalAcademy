@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medical_acadmey_app/home_screen/home_screen.dart';
 import 'package:medical_acadmey_app/login_screen/login_screen.dart';
 import 'package:medical_acadmey_app/resources/bloc.dart';
 import 'package:medical_acadmey_app/resources/cache_helper.dart';
@@ -16,32 +15,20 @@ void main() async {
 
   await Firebase.initializeApp();
   await CacheHelper.init();
-  Widget widget;
   var sharedPreferences = await SharedPreferences.getInstance();
   favoriteList=sharedPreferences.getStringList('l');
-  //passLo = CacheHelper.getData(key: AppString.emailKey);
-  // token = CacheHelper.getData(key: AppString.tokenKey);
-  //email = sharedPreferences.get(AppString.emailKey) as String?;
-  //favoriteList = CacheHelper.getFav();
+
   if (favoriteList != null) {
     email = favoriteList![0];
     passLo = favoriteList![1];
   }
 
-  print(email);
-  if (email != null) {
-    //print(passLo);
-    print(favoriteList);
-
-    widget = const HomeScreen();
-  } else {
-    widget = const LoginScreen();
-  }
+ 
   // ignore: deprecated_member_use
   BlocOverrides.runZoned(
     () {
       runApp(MyApp(
-        startWidget: widget,
+        
       ));
     },
     blocObserver: MyBlocObserver(),
@@ -49,8 +36,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required this.startWidget});
-  final Widget startWidget;
+  const MyApp({super.key,});
+
 
   @override
   Widget build(BuildContext context) {

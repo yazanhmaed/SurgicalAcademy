@@ -10,7 +10,7 @@ class Register extends StatelessWidget {
   __launchWhatsapp() async {
     var whatsapp = "+962798260241";
     var whatsappAndroid =
-        Uri.parse("whatsapp://send?phone=$whatsapp&text=Medical Academy");
+        Uri.parse("whatsapp://send?phone=$whatsapp&text=Surgical Academy");
     if (await canLaunchUrl(whatsappAndroid)) {
       await launchUrl(whatsappAndroid);
     } else {
@@ -36,6 +36,7 @@ class Register extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            
             Center(
               child: Text(
                 'التسجيل',

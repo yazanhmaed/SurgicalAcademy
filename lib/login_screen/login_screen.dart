@@ -34,18 +34,9 @@ class LoginScreen extends StatelessWidget {
                 fontSize: 16.0);
           }
           if (state is UserSuccessState) {
-            // if (state.emailLogin.uid != null) {
-            //   // CacheHelper.seveData(
-            //   //     key: AppString.emailKey, value: state.emailLogin.uid);
-            //   CacheHelper.seveData(
-            //           key: AppString.emailKey, value: state.emailLogin.uid)
-            //       .then((value) {
-            //     print(value);
+     
             navigateAndFinish(context, const HomeScreen());
-            //   }).catchError((onError) {
-            //     print(onError);
-            //   });
-            // }
+            
           }
         },
         builder: (context, state) {

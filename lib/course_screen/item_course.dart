@@ -6,6 +6,7 @@ import 'package:medical_acadmey_app/course_screen/cubit/states.dart';
 import 'package:medical_acadmey_app/resources/color_manager.dart';
 import 'package:medical_acadmey_app/resources/string_manager.dart';
 import 'package:medical_acadmey_app/resources/values_manager.dart';
+import 'package:medical_acadmey_app/resources/widgets/fallback.dart';
 import 'package:medical_acadmey_app/resources/widgets/item_course_widget.dart';
 
 import '../resources/styles_manager.dart';
@@ -67,9 +68,7 @@ class ItemCourse extends StatelessWidget {
                     ],
                   ),
                 ),
-                fallback: (context) => const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                fallback: (context) => Fallback(),
               ),
             );
           }),

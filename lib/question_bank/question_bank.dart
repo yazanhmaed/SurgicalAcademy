@@ -1,10 +1,10 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:medical_acadmey_app/resources/color_manager.dart';
 import 'package:medical_acadmey_app/resources/string_manager.dart';
 import 'package:medical_acadmey_app/resources/values_manager.dart';
+import 'package:medical_acadmey_app/resources/widgets/fallback.dart';
 import 'package:medical_acadmey_app/resources/widgets/pdf_item_widget.dart';
 
 import '../resources/styles_manager.dart';
@@ -67,9 +67,7 @@ class QuestionBank extends StatelessWidget {
                     ],
                   ),
                 ),
-                fallback: (context) => const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                fallback: (context) =>  Fallback()
               ),
             );
           }),

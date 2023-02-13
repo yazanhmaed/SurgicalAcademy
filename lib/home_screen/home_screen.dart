@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                     softWrap: true,
                     style:
                         getBoldStyle(color: ColorManager.black.withOpacity(0.8))
-                            .copyWith(fontSize: AppSize.s18),
+                            .copyWith(fontSize: AppSize.s15),
                   ),
                 ],
               ),

@@ -1,6 +1,7 @@
 // ignore: unused_local_variable
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:medical_acadmey_app/application/application.dart';
 import '../course_screen/course_screen.dart';
 import '../osce/osce.dart';
 import '../pdf_screen/pdf_file.dart';
@@ -17,6 +18,7 @@ List<IconData> icon = [
   FontAwesomeIcons.solidFilePdf,
   FontAwesomeIcons.solidFilePdf,
   FontAwesomeIcons.solidFilePdf,
+  FontAwesomeIcons.googlePlay,
 ];
 List<String> name = [
   'Courses',
@@ -26,6 +28,7 @@ List<String> name = [
   'Surgery Lecture',
   'Surgery Book Mcqs',
   'Osce',
+  'self test & application',
 ];
 
 // ignore: unused_local_variable
@@ -37,4 +40,5 @@ List<Widget> screens = [
   const SurgeryLecture(),
   const SurgeryBookMcqs(),
   const Osce(),
+  const Application(),
 ];

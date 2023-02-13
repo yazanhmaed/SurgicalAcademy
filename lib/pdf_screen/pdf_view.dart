@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// Represents PdfView for Navigation
 class PdfView extends StatefulWidget {
@@ -19,13 +20,25 @@ class _PdfView extends State<PdfView> {
   void initState() {
     super.initState();
   }
+  _launchURL() async {
+    // ignore: deprecated_member_use
+    if (await canLaunch(widget.link)) {
+      // ignore: deprecated_member_use
+      await launch(widget.link);
+      print('sucssrs');
+    } else {
+      print('error');
+      throw 'Could not launch ';
+    }
+  }
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:  Text(
+        title: Text(
           widget.title,
         ),
         actions: <Widget>[
@@ -42,8 +55,9 @@ class _PdfView extends State<PdfView> {
         ],
       ),
       body: SfPdfViewer.network(
-        widget.link
-,        key: _pdfViewerKey,
+        widget.link,
+        key: _pdfViewerKey,
+        onDocumentLoadFailed: (v) =>_launchURL(),
       ),
     );
   }

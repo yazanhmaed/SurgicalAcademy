@@ -1,38 +1,38 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:medical_acadmey_app/Pdf_screen/cubit/states.dart';
 
 import 'package:medical_acadmey_app/resources/color_manager.dart';
 import 'package:medical_acadmey_app/resources/string_manager.dart';
 import 'package:medical_acadmey_app/resources/values_manager.dart';
 import 'package:medical_acadmey_app/resources/widgets/fallback.dart';
-import 'package:medical_acadmey_app/resources/widgets/pdf_item_widget.dart';
 
 import '../resources/styles_manager.dart';
+import '../resources/widgets/app_widget.dart';
 import 'cubit/cubit.dart';
+import 'cubit/states.dart';
 
-class PdfCourse extends StatelessWidget {
-  const PdfCourse({super.key, required this.id});
-  final String id;
+class Application extends StatelessWidget {
+  const Application({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PdfCubit()..getPdfItem(id: id),
-      child: BlocConsumer<PdfCubit, PdfStates>(
+      create: (context) => AppCubit()..getApp(),
+      child: BlocConsumer<AppCubit, AppStates>(
           listener: (context, state) {},
           builder: (context, state) {
-            PdfCubit cubit = PdfCubit.get(context);
+            AppCubit cubit = AppCubit.get(context);
             return Scaffold(
               appBar: AppBar(
                 title: const Text(
-                  AppString.pdf,
+                  AppString.app,
                 ),
               ),
               body: ConditionalBuilder(
-                condition: cubit.pdfItem.isNotEmpty,
+                condition: cubit.App.isNotEmpty,
                 builder: (context) => Padding(
                   padding: const EdgeInsets.only(top: AppPadding.p10),
                   child: Column(
@@ -44,24 +44,24 @@ class PdfCourse extends StatelessWidget {
                             horizontal: Appwidth.w20),
                         height: Appheight.h40,
                         child: Text(
-                          AppString.pdf,
+                          AppString.app,
                           style: getBoldStyle(
                               color: ColorManager.primary,
                               fontSize: AppSize.s15),
                           textAlign: TextAlign.start,
                         ),
-                      ),
-                      const Divider(
-                        thickness: 4,
-                      ),
+                      ),const Divider(
+                      thickness: 4,
+                    ),
                       // Widget view List Item Course
                       Expanded(
                         child: ListView.builder(
                           physics: const BouncingScrollPhysics(),
-                          itemCount: cubit.pdfItem.length,
+                          itemCount: cubit.App.length,
                           itemBuilder: (context, index) {
-                            return PdfItemWidget(
-                                pdfModel: cubit.pdfItem[index], index: index);
+                            return AppItemWidget(
+                                appModel: cubit.App[index],
+                                index: index);
                           },
                         ),
                       )
