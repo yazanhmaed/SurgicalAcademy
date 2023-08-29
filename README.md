@@ -1,5 +1,7 @@
 # Surgical Academy
 
+<a href="https://play.google.com/store/apps/details?id=com.medical.medical_acadmey" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Play_2022_icon.svg/928px-Google_Play_2022_icon.svg.png" alt="google play" height="30" width="40" /></a>
+
 <h3>Medical education platform</h3>
 
 <h3> amazing application is perfect for medical students! It offers a wide variety of medical videos and files that are incredibly helpful for studying. The interface is user-friendly and easy to navigate, which makes finding the content you need a breeze. The high-quality videos cover various medical topics, while the files provide detailed information on various medical conditions. Overall, this application is a great resource for anyone studying medicine!</h3>
