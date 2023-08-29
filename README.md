@@ -1,4 +1,4 @@
-# medical_acadmey_app
+# Surgical Academy
 
 <h3>Medical education platform</h3>
 
