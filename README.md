@@ -1,8 +1,9 @@
 # medical_acadmey_app
 
-Medical education platform
+<h3>Medical education platform</h3>
 
-An application that displays some medical videos and files for students to benefit from
+<h3>An application that displays some medical videos and files for students to benefit from</h3>
+<br>
 <img src="https://github.com/yazanhmaed/SurgicalAcademy/assets/93092669/437e1c1c-0ebe-4782-b883-7deba03ee029" alt="Some Content" style="height:600px;">
 
 <h2>Login Screen</h2>
